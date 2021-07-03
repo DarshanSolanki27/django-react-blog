@@ -63,8 +63,8 @@ class UserListView(ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-    # def get_permissions(self):
-    #     return (IsAdminUser(),)
+    def get_permissions(self):
+        return (IsAdminUser(),)
 
 
 class UserRetrieveDeleteView(RetrieveDestroyAPIView):
